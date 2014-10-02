@@ -3,7 +3,7 @@ var game = new Phaser.Game(400, 490, Phaser.AUTO, 'game');
 var mainState = {
  
     preload: function() { 
-        game.stage.backgroundColor = 'D0FFC2';
+        game.stage.backgroundColor = '#FF6A5E';
         bird = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAQMAAAAk8RryAAAABlBMVEXSvicAAABogyUZAAAAGUlEQVR4AWP4DwYHMOgHDEDASCN6lMYV7gChf3AJ/eB/pQAAAABJRU5ErkJggg==";
         pipe = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAQMAAAAk8RryAAAABlBMVEV0vy4AAADnrrHQAAAAGUlEQVR4AWP4DwYHMOgHDEDASCN6lMYV7gChf3AJ/eB/pQAAAABJRU5ErkJggg==";
         game.load.image('bird', bird);  
@@ -42,6 +42,11 @@ var mainState = {
         game.physics.arcade.overlap(this.bird, this.pipes, this.hitPipe, null, this); 
  
         // Rotate the bird    
+<<<<<<< HEAD
+=======
+	if (this.bird.angle < 20)
+                this.bird.angle += 1; 
+>>>>>>> background
     },
  
     jump: function() {
@@ -52,6 +57,10 @@ var mainState = {
         this.bird.body.velocity.y = -350;
  
         // Jump animation
+<<<<<<< HEAD
+=======
+	game.add.tween(this.bird).to({angle: -20}, 100).start();
+>>>>>>> background
  
     },
  
